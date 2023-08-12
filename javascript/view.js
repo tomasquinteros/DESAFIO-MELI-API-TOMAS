@@ -1,8 +1,11 @@
 function deleteOldResults () {
   const articles = document.getElementsByClassName('body-product')
-  articles.forEach(product => {
-    product.remove()
-  })
+  if (articles.length > 0) {
+    console.log(articles)
+    Array.from(articles).forEach(product => {
+      product.remove()
+    })
+  }
 }
 
 export default function view (data) {
