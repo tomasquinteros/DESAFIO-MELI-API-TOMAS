@@ -1,10 +1,13 @@
-
+function deleteOldResults () {
+  const articles = document.getElementsByClassName('body-product')
+  articles.forEach(product => {
+    product.remove()
+  })
+}
 
 export default function view (data) {
-  console.log(data)
-  
+  deleteOldResults()
   const bodyProducts = document.getElementById('body-products')
-  
   const resultQuantity = document.getElementById('resultQuantity')
   resultQuantity.innerHTML = `Resultados: ${data.paging.total}` 
 
